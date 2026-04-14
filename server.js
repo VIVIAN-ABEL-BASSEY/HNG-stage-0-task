@@ -11,6 +11,13 @@ app.use(cors({
 
 const PORT = process.env.PORT || 3000;
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "API is running 🚀",
+    endpoint: "/api/classify?name=YourName"
+  });
+});
+
 app.get("/api/classify", async (req, res) => {
   try {
     const { name } = req.query;
